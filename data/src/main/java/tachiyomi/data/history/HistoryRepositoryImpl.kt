@@ -31,7 +31,7 @@ class HistoryRepositoryImpl(
     }
 
     override suspend fun getAllReadingDates(): List<Date> {
-        return handler.awaitList { historyQueries.getAllReadingDates() }
+        return handler.await { historyQueries.getAllReadingDates().executeAsList().map { Date(it.last_read) } }
     }
 
     override suspend fun getHistoryByMangaId(mangaId: Long): List<History> {
