@@ -48,6 +48,7 @@ jobs:
 
       - name: Create dummy client_secrets.json
         run: |
+          mkdir -p app/src/main/assets
           echo '{}' > app/src/main/assets/client_secrets.json
 
       - name: Build Debug APK
