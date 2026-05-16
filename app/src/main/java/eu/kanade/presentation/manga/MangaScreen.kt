@@ -1044,6 +1044,7 @@ private fun LazyListScope.sharedChapterItems(
             }
         }
     }
+    }
 }
 
 private fun onChapterItemClick(

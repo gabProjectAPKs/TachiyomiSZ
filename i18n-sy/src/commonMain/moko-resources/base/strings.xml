@@ -631,6 +631,7 @@
     <string name="is_exhentai_gallery">is Exhentai gallery</string>
     <string name="thumbnail_url">Thumbnail url</string>
     <string name="genre">Genre</string>
+    <string name="all_genres">All genres</string>
     <string name="date_posted">Date posted</string>
     <string name="page_count">Page count</string>
     <string name="parent">Parent</string>
