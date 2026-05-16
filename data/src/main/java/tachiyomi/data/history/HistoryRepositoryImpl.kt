@@ -4,7 +4,6 @@ import kotlinx.coroutines.flow.Flow
 import logcat.LogPriority
 import tachiyomi.core.common.util.system.logcat
 import tachiyomi.data.DatabaseHandler
-import tachiyomi.data.GetAllReadingDates
 import tachiyomi.domain.history.model.History
 import tachiyomi.domain.history.model.HistoryUpdate
 import tachiyomi.domain.history.model.HistoryWithRelations
@@ -33,7 +32,7 @@ class HistoryRepositoryImpl(
 
     override suspend fun getAllReadingDates(): List<Date> {
         return handler.await {
-            historyQueries.getAllReadingDates().executeAsList().map(GetAllReadingDates::last_read)
+            historyQueries.getAllReadingDates().executeAsList().mapNotNull { it.last_read }
         }
     }
 
